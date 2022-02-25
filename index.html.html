@@ -77,19 +77,21 @@
         window.navigator
         var settings = {
             "url": "https://capeann2-dev-ed.lightning.force.com/services/data/v44.0/sobjects/Hospital__c",
-            "method": "POST",
+            "type": "POST",
             "crossDomain":true,
             "timeout": 0,
             "headers": {
                 "Content-Type": "application/JSON",
-                "Authorization": "Bearer 00D7Q000004Px4B!ARwAQP8KDH.qu.orgm9Z_B0tZGF8tZpqO9j6vaGOal1KGahyyTpNrWIQu3X5dpgKuoWuY_Vk2LUmwhM5zg99BEgPVVGyEDqy",
+                "Authorization": "Bearer 00D7Q000004Px4B!ARwAQIg.8Gb7rGX4d9uXXjOq8Nm.zq2.9Pmpw2jaVKqKbFpd.LJphZiWIyJH42NBBEWavY5as3fNIwkLnKxlly4kEQ049ZUJ",
                 "Cookie": document.cookie,
                 "Access-Control-Allow-Origin":"*",
+                
             },
                         "data": data,
                     };
                     
                     $.ajax({
+                        
                         beforeSend: function(xhr)
                         {
                             xhr.setRequestHeader("Authorization", 'Bearer {!$API.Session_ID}');
