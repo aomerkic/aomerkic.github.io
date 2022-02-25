@@ -76,31 +76,35 @@
         "\",\r\n\"Email__c\":\""+email+"\",\r\n\"Open_hours__c\":\""+open_hours+"\"\r\n}";
         window.navigator
         var settings = {
-  "url": "https://capeann2-dev-ed.lightning.force.com/services/data/v44.0/sobjects/Hospital__c",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/JSON",
-    "Authorization": "Bearer 00D7Q000004Px4B!ARwAQP8KDH.qu.orgm9Z_B0tZGF8tZpqO9j6vaGOal1KGahyyTpNrWIQu3X5dpgKuoWuY_Vk2LUmwhM5zg99BEgPVVGyEDqy",
-    "Cookie": document.cookie,
-    "Access-Control-Allow-Origin":"*",
-  },
-            "data": data,
-          };
-          
-          $.ajax({
-              type: reqType,
-              beforeSend: function(xhr)
-              {
-                  xhr.setRequestHeader("Authorization", 'Bearer {!$API.Session_ID}');
-              },
+            "url": "https://capeann2-dev-ed.lightning.force.com/services/data/v44.0/sobjects/Hospital__c",
+            "method": "POST",
+            "crossDomain":true,
+            "timeout": 0,
+            "headers": {
+                "Content-Type": "application/JSON",
+                "Authorization": "Bearer 00D7Q000004Px4B!ARwAQP8KDH.qu.orgm9Z_B0tZGF8tZpqO9j6vaGOal1KGahyyTpNrWIQu3X5dpgKuoWuY_Vk2LUmwhM5zg99BEgPVVGyEDqy",
+                "Cookie": document.cookie,
+                "Access-Control-Allow-Origin":"*",
+            },
+                        "data": data,
+                    };
+                    
+                    $.ajax({
+                        beforeSend: function(xhr)
+                        {
+                            xhr.setRequestHeader("Authorization", 'Bearer {!$API.Session_ID}');
+                        },
 
-              
-          })
+                        done(response){
+                            console.log(response);
+                        }
 
-          $.ajax(settings).done(function (response) {
-            console.log(response);
+
           });
+
+         // $.ajax(settings).done(function (response) {
+         //  console.log(response);
+         // }); 
 
         //var submit = $("input[type=submit]",this).attr('name'); 
         //alert(submit); // name of submit button
