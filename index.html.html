@@ -91,11 +91,7 @@
                     };
                     
                     $.ajax({
-                        
-                        beforeSend: function(xhr)
-                        {
-                            xhr.setRequestHeader("Authorization", 'Bearer {!$API.Session_ID}');
-                        },
+
 
                         done(response){
                             console.log(response);
