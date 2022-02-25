@@ -90,12 +90,9 @@
                         "data": data,
                     };
                     
-                    $.ajax({
-
-
-                        done(response){
-                            console.log(response);
-                        }
+                    $.ajax(settings).done(function (response) {
+                        console.log(response);
+                      });
 
 
           });
